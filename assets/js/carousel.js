@@ -12,18 +12,9 @@ var review = $('.review-card');
 review.owlCarousel({
     margin:10,
     loop:true,
-    responsive : {
-        // breakpoint from 0 up
-        0 : {
-            autoWidth:false,
-            items:1,
-        },
-        // breakpoint from 480 up
-        480 : {
-            autoWidth:true,
-            items:4,
-        },
-    }
+    autoWidth:true,
+    items:4,
+    dots:false,
 })
 
 $('.review #next').click(function() {
@@ -39,18 +30,9 @@ var race = $('.race-card');
 race.owlCarousel({
     margin:10,
     loop:true,
+    autoWidth:true,
     items:4,
-    responsive : {
-        // breakpoint from 0 up
-        0 : {
-            autoWidth:false,
-            items:1,
-        },
-        // breakpoint from 480 up
-        480 : {
-            autoWidth:true,
-        },
-    }
+    dots:false,
 })
 
 $('.race #next').click(function() {
