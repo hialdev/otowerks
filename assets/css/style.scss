@@ -410,6 +410,10 @@ Component
     }
 }
 
+.text-primary{
+    color: $prm !important;
+}
+
 .oto-menu{
 
     @media only screen and (max-width: $w-sm) {
@@ -618,6 +622,15 @@ header{
     }
 }
 
+//
+.oto-brand{
+    max-height: 2.8em;
+    @media only screen and (max-width: $w-sm) {
+        max-height: 1.8em;
+    }
+}
+
+
 //Button
 .ema-btn{
     text-decoration: none;
@@ -681,7 +694,7 @@ header{
 .card-responsive{
     width: 25em;
     @media only screen and (max-width: $w-sm) {
-        width: 21.3em;
+        width: 19.4em;
     }
 }
 

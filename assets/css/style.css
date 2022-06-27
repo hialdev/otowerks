@@ -411,6 +411,10 @@ Component
   z-index: -1;
 }
 
+.text-primary {
+  color: #FFD900 !important;
+}
+
 @media only screen and (max-width: 760px) {
   .oto-menu {
     position: fixed;
@@ -674,6 +678,16 @@ header {
   }
 }
 
+.oto-brand {
+  max-height: 2.8em;
+}
+
+@media only screen and (max-width: 760px) {
+  .oto-brand {
+    max-height: 1.8em;
+  }
+}
+
 .ema-btn {
   text-decoration: none;
   color: currentColor;
@@ -755,7 +769,7 @@ header {
 
 @media only screen and (max-width: 760px) {
   .card-responsive {
-    width: 21.3em;
+    width: 19.4em;
   }
 }
 
