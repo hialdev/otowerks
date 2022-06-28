@@ -427,7 +427,7 @@ Component
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: linear-gradient(103.67deg, #F7F7F7 -2.75%, #BB2030 -2.74%, #F7F7F7 -2.73%, #F7F7F7 62.58%, #212121 62.62%, #252525 82.99%, rgba(234, 200, 3, 0.950718) 83.26%, #FFD900 113.48%);
+    background: linear-gradient(103.07deg, #2B2B2B -2.82%, #252525 69.69%, rgba(234, 200, 3, 0.950718) 69.75%, #FFD900 119.75%);
     -webkit-box-align: start !important;
         -ms-flex-align: start !important;
             align-items: start !important;
@@ -437,19 +437,27 @@ Component
   .oto-menu > li.nav-item {
     border-left: 2px solid #FFD900;
     display: block !important;
-    margin-bottom: 0.4em;
-    background: #fff;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
+  .oto-menu .nav-link {
+    color: #fff !important;
+  }
+  .oto-menu .nav-link:hover, .oto-menu .nav-link:focus {
+    color: #FFD900 !important;
+  }
+  .oto-menu .nav-link.active {
+    color: #FFD900 !important;
+    font-weight: bold !important;
+  }
   .oto-menu .oto-close {
-    background-color: #ff000dd7;
+    background-color: #0A0A0A;
     border-radius: 7px;
     padding: 0.3em 0.6em;
     margin-bottom: 1em;
   }
   .oto-menu .oto-close * {
-    color: #fff;
+    color: #FFD900;
   }
 }
 
