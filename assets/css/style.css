@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;1,300&display=swap");
 /* ---------------------------------
 Variables
@@ -188,9 +189,44 @@ button, a {
   }
 }
 
-.ema-shadow-hover:hover {
-  -webkit-box-shadow: 15px 25px 50px -20px rgba(255, 0, 0, 0.16);
-          box-shadow: 15px 25px 50px -20px rgba(255, 0, 0, 0.16);
+.title-3nd {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 760px) {
+  .title-3nd {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 1095px) {
+  .title-3nd {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .oto-thumbnail {
+    width: 20em;
+  }
+}
+
+.oto-thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 10em !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+.oto-thumbnail:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.oto-shadow-hover:hover {
+  -webkit-box-shadow: 15px 25px 50px -20px rgba(255, 174, 0, 0.16);
+          box-shadow: 15px 25px 50px -20px rgba(255, 174, 0, 0.16);
 }
 
 .contact-modal form input, .contact-modal form textarea {
@@ -331,6 +367,50 @@ button, a {
   margin: 1.9em 0px;
 }
 
+:root {
+  /* The intrinsic width of the underline stroke (in pixels). This is 
+   * the same as the height of the cap images. Don't specify the
+   * units! This is because of some of the calculations we do later on. */
+  --underline-intrinsic-width: 8;
+  /* The actual width of the underline stroke we want to render (in pixels).
+    * You can modify this, and the sizing and positioning should be calculated
+    * accordingly. Again, Don't specify the units! */
+  --underline-width: 12;
+  /* The colour used to draw the underline. It should match the colour
+    * used in the cap images... unfortunately we can't modify the SVG
+    * fill via CSS because it's a background image. */
+  --underline-color: #FFD900;
+  /* We need to know the width of the cap images so that we
+    * can position everything on the x axis accordingly. */
+  --underline-cap-width: 2px;
+  /* The border is positioned relative to the bottom of the line.
+    * We can move it upwards a little to create an overlap effect. */
+  --underline-offset-y: -2px;
+  /* The padding to add to the x axis. By default, the caps would be
+    * aligned with the beginning and end of the line. */
+  --underline-padding-x: 0.12em;
+  /* The cap images to use that form the left and right rounded
+    * shape. I guess these could be any shape, they don't
+    * necessarily have to be round 🙂.
+    */
+}
+
+.oto-underline {
+  text-decoration: none !important;
+  color: #0A0A0A !important;
+  display: inline;
+  --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
+  padding: 0 calc(var(--underline-padding-x) + calc(var(--underline-cap-width) * var(--underline-width-scale)));
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--underline-color)), to(var(--underline-color)));
+  background-image: linear-gradient(180deg, var(--underline-color), var(--underline-color));
+  background-position-x: calc(var(--underline-cap-width) * var(--underline-width-scale)), 0, 100%;
+  background-position-y: calc(100% - var(--underline-offset-y) * -1);
+  background-size: calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px);
+}
+
 /* ---------------------------------
 end Reset
 --------------------------------- */
@@ -394,6 +474,55 @@ Component
   font-weight: bold !important;
 }
 
+.youtube {
+  width: 100%;
+  height: 30em;
+}
+
+@media only screen and (max-width: 760px) {
+  .youtube {
+    height: 20em;
+  }
+}
+
+@media only screen and (max-width: 1095px) {
+  .youtube {
+    font-size: 1rem;
+  }
+}
+
+.lc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lc.lc-1 {
+  -webkit-line-clamp: 1;
+}
+
+.lc.lc-2 {
+  -webkit-line-clamp: 2;
+}
+
+.lc.lc-3 {
+  -webkit-line-clamp: 3;
+}
+
+.lc.lc-4 {
+  -webkit-line-clamp: 4;
+}
+
+.oto-breadcumb > li::after {
+  content: '/';
+  margin-left: 0.4em;
+  color: #8b8b8b;
+}
+
+.oto-breadcumb > li:last-child::after {
+  content: '';
+}
+
 .foot-sosmed > a {
   z-index: 1;
   position: relative;
@@ -409,6 +538,27 @@ Component
   bottom: 0;
   margin-bottom: -0.3em;
   z-index: -1;
+}
+
+.btn.oto-tag {
+  margin: 0.8em 0px;
+  color: #ffbb00 !important;
+  background-color: #ffd9003d !important;
+  border-color: #ffd9003d !important;
+  white-space: nowrap;
+}
+
+.btn.oto-tag:hover {
+  background-color: #FFD900 !important;
+  color: #0A0A0A !important;
+}
+
+.btn.oto-tag.active {
+  background-color: #FFD900 !important;
+  color: #0A0A0A !important;
+  font-weight: bold;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .text-primary {
